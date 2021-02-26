@@ -67,10 +67,12 @@ Install into Python/virtual environment:
 ```shell
 pip install mod_wsgi
 # or
-pip install mod_wsgi-standalone
+pip install mod_wsgi-standalone (long)
 ```
 
-This have the benefit of being separated from the system's Apache installation (suitable for docker-like settings, etc.).
+The standalone have the benefit of being separated from the system's Apache installation (suitable for docker-like settings, etc.).
+
+For errors with `bdist_wheel`, try `pip install wheel`.
 
 Verify with:
 ```shell
@@ -78,3 +80,4 @@ mod_wsgi-express start-server
 # Visit localhost:8000
 ```
 
+See the `mod_wsgi` docs and [django's guide](https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/modwsgi/) if not using the stand-alone with the express tool.
