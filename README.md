@@ -48,6 +48,7 @@ systemctl status apache2
 ```shell
 systemctl [verb] apache2
 # Verbs:
+ - status
  - start
  - stop
  - restart
@@ -59,4 +60,21 @@ systemctl [verb] apache2
 See [section 5](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-10#step-5-%E2%80%94-setting-up-virtual-hosts-(recommended)) and [6](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-debian-10#step-6-%E2%80%93-getting-familiar-with-important-apache-files-and-directories) for virtual hosts and important Apache files and directories respectively.
 
 ### `mod_wsgi`
+
+See [documentations](https://modwsgi.readthedocs.io/en/develop/) for details.
+
+Install into Python/virtual environment:
+```shell
+pip install mod_wsgi
+# or
+pip install mod_wsgi-standalone
+```
+
+This have the benefit of being separated from the system's Apache installation (suitable for docker-like settings, etc.).
+
+Verify with:
+```shell
+mod_wsgi-express start-server
+# Visit localhost:8000
+```
 
