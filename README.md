@@ -81,3 +81,31 @@ mod_wsgi-express start-server
 ```
 
 See the `mod_wsgi` docs and [django's guide](https://docs.djangoproject.com/en/3.1/howto/deployment/wsgi/modwsgi/) if not using the stand-alone with the express tool.
+
+## Django Project
+
+Initialise a Django project with:
+```shell
+django-admin startproject [project-name]
+```
+
+Verify with the development server:
+```shell
+# In project directory:
+python manage.py runserver
+# Check localhost:8000 to see the rocket
+```
+
+### Basic Structure
+
+```
+project-name/          Just a container, can be renamed
+    manage.py          For administrative tasks
+    project-name/      Python package corresponding to the project
+        __init__.py
+        settings.py
+        urls.py        "Table of content", maps URLs to django views (python functions)
+        asgi.py        Entry points for web servers to serve the project
+        wsgi.py        See above
+```
+
