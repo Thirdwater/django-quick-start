@@ -172,3 +172,20 @@ python manage.py shell
 * Perform CRUD in python.
 * Define `__str__` method since the representation will be used throughout the ecosystem (e.g. interactive shell, admin interface).
 * Any custom methods will also be available in the API (e.g. don't have to come up with the API equivalent of the desired query on the fly).
+
+## Django Admin
+
+Register admin user with:
+```shell
+python manage.py createsuperuser
+```
+
+* Admin interface is provided by default (see `admin/` routing in the project's `urls.py`).
+* Models can be registered to the interface to automatically get access to administrative tasks for free:
+  ```python
+  # Inside app/admin.py
+  from .models import ModelName
+  
+  admin.site.register(ModelName)
+  ```
+* Essentially CRUD in the actual website (subset of what's available in python through the database API).
