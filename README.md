@@ -147,3 +147,13 @@ models --makemigrations--> migrations --migrate--> database tables
   ```
   python manage.py sqlmigrate app-name migration-#
   ```
+  
+* Migrations allow database/scheme changes over time without having to delete or make new tables.
+
+#### Workflow for Changing Models
+
+1. Make the changes in `models.py`.
+2. Create a new migrations for those changes (`makemigrations`).
+3. Apply the migration to the database (`migrate`).
+
+Migrations (artifacts from step 2 above) can be put into version control and ship with the app.
