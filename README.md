@@ -9,6 +9,8 @@
 
 * Setting up `mod_wsgi` on the Apache installation as opposed to just using `mod_wsgi-standalone` and the express tool ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#install-apache-and-mod-wsgi)).
 * Setting up a proper database with the required python bindings as opposed to just using SQLite ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#get-your-database-running)).
+* Intricacies around the database API ([queries guide](https://docs.djangoproject.com/en/3.1/topics/db/queries/), [`QuerySet` ref](https://docs.djangoproject.com/en/3.1/ref/models/querysets/), [Lookup API ref](https://docs.djangoproject.com/en/3.1/ref/models/lookups/), etc.).
+  * Mainly just Django's decisions on the translations from query language to python.
 
 ## Installation
 
@@ -134,6 +136,8 @@ python manage.py startapp [app-name]
 
 * Django model represents database layout with additional metadata.
 * Model is meant to be the single, definitive source of truth about the data.
+* SQL commands specific to the choice of backends are generated from the models (migrations).
+* Models also provide API to the corresponding database in python (e.g. CRUD) ([docs](https://docs.djangoproject.com/en/3.1/topics/db/queries/)).
 
 ### Migrations
 
