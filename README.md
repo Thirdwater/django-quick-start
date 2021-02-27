@@ -143,3 +143,7 @@ models --makemigrations--> migrations --migrate--> database tables
 
 * Default apps don't require `makemigrations` since there are already migrations for them.
 * New models/changes need to be `makemigrations`-ed first before they can be migrated.
+* Inspect the SQL commands (dependent on the backends specified in the `settings.py`) with:
+  ```
+  python manage.py sqlmigrate app-name migration-#
+  ```
