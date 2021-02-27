@@ -10,7 +10,7 @@
 * Setting up `mod_wsgi` on the Apache installation as opposed to just using `mod_wsgi-standalone` and the express tool ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#install-apache-and-mod-wsgi)).
 * Setting up a proper database with the required python bindings as opposed to just using SQLite ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#get-your-database-running)).
 * Intricacies around the database API ([queries guide](https://docs.djangoproject.com/en/3.1/topics/db/queries/), [`QuerySet` ref](https://docs.djangoproject.com/en/3.1/ref/models/querysets/), [Lookup API ref](https://docs.djangoproject.com/en/3.1/ref/models/lookups/), etc.).
-  * Mainly just Django's decisions on the translations from query language to python.
+  * Mainly just Django's decisions on the translations from python models to tables/records and from query language to python db API.
 
 ## Installation
 
