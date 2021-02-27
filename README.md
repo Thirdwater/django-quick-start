@@ -109,3 +109,13 @@ project-name/          Just a container, can be renamed
         wsgi.py        See above
 ```
 
+## Django App
+
+* Is a unit of application (e.g. blog system, database of some records, polling app).
+* Many-to-many relationship with django projects.
+* Can be anywhere in python path, or in some project container as another top-level module, or in a submodule of existing project, etc.
+
+Initialise with:
+```shell
+python manage.py startapp [app-name]
+```
