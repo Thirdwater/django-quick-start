@@ -9,7 +9,7 @@
 
 * Setting up `mod_wsgi` on the Apache installation as opposed to just using `mod_wsgi-standalone` and the express tool ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#install-apache-and-mod-wsgi)).
 * Setting up a proper database with the required python bindings as opposed to just using SQLite ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#get-your-database-running)).
-* Intricacies around the database API ([queries guide](https://docs.djangoproject.com/en/3.1/topics/db/queries/), [`QuerySet` ref](https://docs.djangoproject.com/en/3.1/ref/models/querysets/), [Lookup API ref](https://docs.djangoproject.com/en/3.1/ref/models/lookups/), etc.).
+* Intricacies around the database API ([Database API ref](https://docs.djangoproject.com/en/3.1/topics/db/queries/), [`QuerySet` ref](https://docs.djangoproject.com/en/3.1/ref/models/querysets/), [Lookup API ref](https://docs.djangoproject.com/en/3.1/ref/models/lookups/), etc.).
   * Mainly just Django's decisions on the translations from python models to tables/records and from query language to python db API.
 
 ## Installation
@@ -161,3 +161,14 @@ models --makemigrations--> migrations --migrate--> database tables
 3. Apply the migration to the database (`migrate`).
 
 Migrations (artifacts from step 2 above) can be put into version control and ship with the app.
+
+### Database API
+
+Available from:
+```shell
+python manage.py shell
+```
+
+* Perform CRUD in python.
+* Define `__str__` method since the representation will be used throughout the ecosystem (e.g. interactive shell, admin interface).
+* Any custom methods will also be available in the API (e.g. don't have to come up with the API equivalent of the desired query on the fly).
