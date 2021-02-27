@@ -1,5 +1,15 @@
 # Django Quick-Start
 
+## Resources
+
+* [Official Documentations](https://docs.djangoproject.com/en/3.1/)
+* [Django by Example YouTube playlist by Noah Rubin](https://www.youtube.com/playlist?list=PLAF3anQEEkzS-mjdX7s-D63bjLWRdhuFM)
+
+## Loose-ends
+
+* Setting up `mod_wsgi` on the Apache installation as opposed to just using `mod_wsgi-standalone` and the express tool ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#install-apache-and-mod-wsgi)).
+* Setting up a proper database with the required python bindings as opposed to just using SQLite ([docs](https://docs.djangoproject.com/en/3.1/topics/install/#get-your-database-running)).
+
 ## Installation
 
 ### Django
@@ -119,3 +129,17 @@ Initialise with:
 ```shell
 python manage.py startapp [app-name]
 ```
+
+## Models and Databases
+
+* Django model represents database layout with additional metadata.
+* Model is meant to be the single, definitive source of truth about the data.
+
+### Migrations
+
+```
+models --makemigrations--> migrations --migrate--> database tables
+```
+
+* Default apps don't require `makemigrations` since there are already migrations for them.
+* New models/changes need to be `makemigrations`-ed first before they can be migrated.
